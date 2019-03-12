@@ -1,0 +1,61 @@
+#container{
+  width: 100%;
+  height: 90vh;
+  margin: auto;
+  border-radius: 5px;
+
+  iframe{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .col{
+    float: left;
+    width: 33.3%;
+    height: auto;
+    border-radius: 5px;
+
+    .small-block{
+      width: 95%;
+      height: 100px;
+      margin: auto;
+      margin: 9px;
+      background-color: white;
+      border-radius: 3px;
+    }
+
+    .medium-block{
+      width: 95%;
+      height: 300px;
+      margin: auto;
+      margin: 9px;
+      background-color: white;
+      border-radius: 3px;
+      overflow-y: auto;
+    }
+
+    .gig-block{
+      width: 95%;
+      height: 500px;
+      margin: auto;
+      margin: 9px;
+      background-color: white;
+      border-radius: 3px;
+    }
+
+    i{
+      width: 100%;
+      text-align: center;
+      margin-top: 10.5%;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #container{
+    .col {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
