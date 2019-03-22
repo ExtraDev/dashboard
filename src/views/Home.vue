@@ -8,6 +8,9 @@
         <v-flex xs-4 mr-2>
           <RTSInfoTile></RTSInfoTile>
         </v-flex>
+        <v-flex xs-4 mr-2>
+          <YoutubeFeed></YoutubeFeed>
+        </v-flex>
       </v-layout>
     </v-container>
   </div>
@@ -16,11 +19,13 @@
 <script>
 import WeatherTile from "../components/WeatherTile.vue";
 import RTSInfoTile from "../components/RTSInfoTile.vue";
+import YoutubeFeed from "../components/YoutubeFeed.vue";
 
 export default {
   components: {
     WeatherTile,
-    RTSInfoTile
+    RTSInfoTile,
+    YoutubeFeed,
   }
 };
 </script>

@@ -1,9 +1,10 @@
 <template>
-  <div>
-    <div>
+  <v-card>
+    <v-card-title>
       <h2>Youtube</h2>
-    </div>
-  </div>
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    </v-card-title>
+  </v-card>
 </template>
 <script>
 import Youtube from "../services/YoutubeService";
