@@ -2,14 +2,10 @@
   <v-app>
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
+        <span>MediaDashboard</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn
-        to="/about"
-        flat
-      >
+      <v-btn to="/about" flat>
         <span class="mr-2">About</span>
       </v-btn>
     </v-toolbar>
@@ -21,17 +17,13 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  },
-  data () {
+  name: "App",
+  components: {},
+  data() {
     return {
       //
-    }
+    };
   }
-}
+};
 </script>
