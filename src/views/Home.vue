@@ -32,7 +32,7 @@
           <v-list-tile-avatar>
             <v-avatar size="32px" tile>
               <img
-                :src="`https://cdn.vuetifyjs.com/images/bottom-sheets/${tile.img}`"
+                :src="`${tile.img}`"
                 :alt="tile.title"
               >
             </v-avatar>
@@ -57,22 +57,22 @@ export default {
       sheet: false,
       compList: [
         {
-          img: "inbox.png",
+          img: "./images/icons/sunny.png",
           title: "Weather",
           component: "WeatherTile"
         },
         {
-          img: "inbox.png",
+          img: "./images/icons/televisions.png",
           title: "RTSInfo",
           component: "RTSInfoTile"
         },
         {
-          img: "inbox.png",
+          img: "./images/icons/radio.png",
           title: "RTSLiveRadio",
           component: "RTSLiveRadioTile"
         },
         {
-          img: "inbox.png",
+          img: "./images/icons/youtube.png",
           title: "YoutubeFeed",
           component: "YoutubeFeed"
         }
