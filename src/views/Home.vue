@@ -1,11 +1,29 @@
 <template>
   <div>
-    <h1>Hello world</h1>
+    <v-container :fluid="true">
+      <v-layout
+        wrap
+      >
+        <v-flex xs-4 mr-2>
+          <WeatherTile></WeatherTile>
+        </v-flex>
+        <v-flex xs-4 mr-2>
+          <WeatherTile></WeatherTile>
+        </v-flex>
+        <v-flex xs-4 mr-2>
+          <WeatherTile></WeatherTile>
+        </v-flex>
+      </v-layout>
+    </v-container>
   </div>
 </template>
 
 <script>
+import WeatherTile from '../components/WeatherTile.vue'
+
 export default {
-  components: {}
+  components: {
+    WeatherTile,
+  }
 };
 </script>
