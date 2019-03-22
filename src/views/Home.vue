@@ -1,14 +1,14 @@
 <template>
   <div>
     <grid-layout
-      :layout="layout"
+      :layout="tiles"
       :col-num="12"
       :row-height="100"
       :is-mirrored="false"
       :margin="[20, 20]"
     >
       <grid-item
-        v-for="item in layout"
+        v-for="item in tiles"
         v-bind:key="item.i"
         :x="item.x"
         :y="item.y"
@@ -20,10 +20,27 @@
       >
         <component v-bind:is="item.component"></component>
       </grid-item>
-      <v-btn v-on:click="addTile" absolute bottom right fab>
+      <v-btn v-on:click="sheet = true" absolute bottom right fab>
         <v-icon>add</v-icon>
       </v-btn>
     </grid-layout>
+
+    <v-bottom-sheet v-model="sheet">
+      <v-list>
+        <v-subheader>Open in</v-subheader>
+        <v-list-tile v-for="tile in compList" :key="tile.title" @click="addTile(tile.component)">
+          <v-list-tile-avatar>
+            <v-avatar size="32px" tile>
+              <img
+                :src="`https://cdn.vuetifyjs.com/images/bottom-sheets/${tile.img}`"
+                :alt="tile.title"
+              >
+            </v-avatar>
+          </v-list-tile-avatar>
+          <v-list-tile-title>{{ tile.title }}</v-list-tile-title>
+        </v-list-tile>
+      </v-list>
+    </v-bottom-sheet>
   </div>
 </template>
 
@@ -37,7 +54,30 @@ import RTSLiveRadioTile from "../components/RTSLiveRadioTile.vue";
 export default {
   data() {
     return {
-      layout: [
+      sheet: false,
+      compList: [
+        {
+          img: "inbox.png",
+          title: "Weather",
+          component: "WeatherTile"
+        },
+        {
+          img: "inbox.png",
+          title: "RTSInfo",
+          component: "RTSInfoTile"
+        },
+        {
+          img: "inbox.png",
+          title: "RTSLiveRadio",
+          component: "RTSLiveRadioTile"
+        },
+        {
+          img: "inbox.png",
+          title: "YoutubeFeed",
+          component: "YoutubeFeed"
+        }
+      ],
+      tiles: [
         {
           x: 4,
           y: 0,
@@ -59,32 +99,31 @@ export default {
     AboutTile
   },
   methods: {
-    addTile: function() {
+    addTile: function(component) {
       let posX = 0,
         posY = 0,
         width = 4,
         height = 2,
         minWidth = 4,
         minHeight = 2,
-        id = 0,
-        component = "RTSLiveRadioTile";
+        id = 0;
 
-      if (this.layout[0].component == "AboutTile") {
-        this.layout = [];
+      if (this.tiles[0].component == "AboutTile") {
+        this.tiles = [];
       } else {
-        let lastLayout = this.layout[this.layout.length - 1];
+        let lastTiles = this.tiles[this.tiles.length - 1];
 
-        if (lastLayout.x != 8) {
-          posX = lastLayout.x + 4;
-          posY = lastLayout.y;
+        if (lastTiles.x != 8) {
+          posX = lastTiles.x + 4;
+          posY = lastTiles.y;
         } else {
-          posY = lastLayout.y + 1;
+          posY = lastTiles.y + 1;
         }
 
-        id = lastLayout.i + 1;
+        id = lastTiles.i + 1;
       }
 
-      let newLayout = {
+      let newTiles = {
         x: posX,
         y: posY,
         w: width,
@@ -95,7 +134,8 @@ export default {
         component: component
       };
 
-      this.layout.push(newLayout);
+      this.tiles.push(newTiles);
+      this.sheet = false;
     }
   }
 };
