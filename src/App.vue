@@ -19,7 +19,7 @@
       <v-list class="pa-1">
         <v-list-tile>
           <v-list-tile-content>Dark mode</v-list-tile-content>
-          <v-switch flat v-model="darkMode">Options</v-switch>
+          <v-switch flat v-model="darkMode"></v-switch>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>

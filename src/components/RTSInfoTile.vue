@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-card-title>
-      <h2>RTS Info</h2>
+      <h2>RTS Last News</h2>
     </v-card-title>
   </v-card>
 </template>
