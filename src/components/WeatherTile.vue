@@ -7,13 +7,29 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        
-      }
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      
     }
-  }
+  },
+  mounted: function() {
+    /*
+    axios.get({
+      method: 'GET',
+      url: 'https://api.srgssr.ch/forecasts/v1.0/weather/current',
+      data: {
+        latitude: null,
+        longitude: null
+      }
+    })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+    */
+  },
+}
 </script>
 
 <style scoped>

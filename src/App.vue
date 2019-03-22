@@ -18,6 +18,7 @@
 
 <script>
 import Home from "./views/Home.vue";
+import RTSService from './services/RTSService';
 
 export default {
   name: "App",
@@ -28,6 +29,37 @@ export default {
     return {
       //
     };
+  },
+  mounted: function() {
+    let generateAccessToken = false;
+
+    if (localStorage.rtsToken) {
+      const rtsToken = JSON.parse(localStorage.rtsToken);
+      const tokenExpirationDate = parseInt(rtsToken.issued_at) + parseInt(rtsToken.expires_in);
+      const currentDate = new Date().getTime();
+
+      if (tokenExpirationDate < currentDate) {
+        generateAccessToken = true;
+      }
+    } else {
+      generateAccessToken = true;
+    }
+    
+    // Generates a new access token for the RTS API
+    if (generateAccessToken) {
+      RTSService.getAccessToken()
+          .then((res) => res.data)
+          .then((data) => {
+            localStorage.rtsToken = JSON.stringify({
+              access_token: data.access_token,
+              client_id: data.client_id,
+              token_type: data.token_type,
+              expires_in: data.expires_in,
+              issued_at: data.issued_at
+            });
+          });
+    }
+    
   }
 };
 </script>
