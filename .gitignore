@@ -1,6 +1,8 @@
 .DS_Store
 **/node_modules/
 /backend/public
+package-lock.json
+.env
 
 # Error files
 npm-debug.log*
