@@ -16,18 +16,21 @@ export default {
     }
   },
   mounted: function() {
-    /*
-    axios.get({
+
+    const accessToken = JSON.parse(localStorage.rtsToken).access_token;
+
+    fetch('https://api.srgssr.ch/forecasts/v1.0/weather/current/?latitude=46.2&longitude=6.1667', {
       method: 'GET',
-      url: 'https://api.srgssr.ch/forecasts/v1.0/weather/current',
-      data: {
-        latitude: null,
-        longitude: null
-      }
+      mode: 'no-cors',
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + accessToken
+      })
     })
-      .then((res) => console.log(res))
+      .then(response => {
+        console.log(response)
+      })
       .catch((err) => console.log(err));
-    */
   },
 }
 </script>
