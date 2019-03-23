@@ -6,17 +6,18 @@
       </h2>
     </v-card-title>
     <iframe
-      id="9c08b0cf029d5ea61449ca48200c1907"
-      allowfullscreen
+      id="30082e045014815a01e1a45566d80b0e"
       width="100%"
-      height="30px"
+      height="auto"
       frameborder="0"
+      allowfullscreen="allowfullscreen"
+      referrerpolicy="no-referrer-when-downgrade"
       allow="autoplay; encrypted-media"
+      src
     ></iframe>
   </v-card>
 </template>
 <script>
-import axios from "axios";
 export default {
   data() {
     return {};
@@ -26,7 +27,7 @@ export default {
   },
   mounted: function() {
     document.getElementById(
-      "9c08b0cf029d5ea61449ca48200c1907"
+      "30082e045014815a01e1a45566d80b0e"
     ).src = this.params.channel_src;
   }
 };
