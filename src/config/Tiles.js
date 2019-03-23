@@ -19,12 +19,12 @@ export default {
         title: "La 1ère",
         img: "./images/icons/rts-radio-1.png",
         component: "RTSLiveRadioTile",
-        radio_src: "//tp.srgssr.ch/p/srf/embed?urn=urn:rts:audio:3262363&start="
+        radio_src: "//tp.srgssr.ch/p/srf/embed?urn=urn:rts:audio:3262320&start="
     }, {
         title: "Espace 2",
         img: "./images/icons/rts-radio-2.png",
         component: "RTSLiveRadioTile",
-        radio_src: "//tp.srgssr.ch/p/srf/embed?urn=urn:rts:audio:3262363&start="
+        radio_src: "//tp.srgssr.ch/p/srf/embed?urn=urn:rts:audio:3262362&start="
     }, {
         title: "Couleur 3",
         img: "./images/icons/rts-radio-3.png",

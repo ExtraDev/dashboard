@@ -5,14 +5,16 @@
         <slot></slot>
       </h2>
     </v-card-title>
-    <iframe
-      id="9c08b0cf029d5ea61449ca48200c1907"
-      allowfullscreen
-      width="100%"
-      height="30px"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-    ></iframe>
+    <v-flex xs12>
+      <iframe
+        allowfullscreen
+        width="100%"
+        height="30px"
+        frameborder="0"
+        allow="geolocation *; autoplay; encrypted-media"
+        :src="params.radio_src"
+      ></iframe>
+    </v-flex>
   </v-card>
 </template>
 <script>
@@ -24,11 +26,7 @@ export default {
   props: {
     params: Object
   },
-  mounted: function() {
-    document.getElementById(
-      "9c08b0cf029d5ea61449ca48200c1907"
-    ).src = this.params.channel_src;
-  }
+  mounted: function() {}
 };
 </script>
 
