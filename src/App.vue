@@ -5,9 +5,6 @@
         <span>Media Dashboard</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn to="/about" flat>
-        <span class="mr-2">About</span>
-      </v-btn>
       <v-btn flat @click.stop="drawer = !drawer">Options</v-btn>
     </v-toolbar>
 

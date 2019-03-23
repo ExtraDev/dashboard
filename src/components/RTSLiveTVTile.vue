@@ -7,18 +7,18 @@
     </v-card-title>
     <v-flex xs12>
       <iframe
-        allowfullscreen
         width="100%"
-        height="30px"
+        height="auto"
         frameborder="0"
-        allow="geolocation *; autoplay; encrypted-media"
-        :src="params.radio_src"
+        allowfullscreen="allowfullscreen"
+        referrerpolicy="no-referrer-when-downgrade"
+        allow="autoplay; encrypted-media"
+        :src="params.channel_src"
       ></iframe>
     </v-flex>
   </v-card>
 </template>
 <script>
-import axios from "axios";
 export default {
   data() {
     return {};
