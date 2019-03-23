@@ -4,11 +4,11 @@
     <v-flex xs12>
       <v-card>
         <v-card-title>
-          <v-flex md-6>
+          <v-flex md6>
             <h2>Weather - {{ city.name }}</h2>
           </v-flex>
 
-          <v-flex md-6>
+          <v-flex md6>
             <v-select
               :items="cities"
               label="City"
@@ -21,7 +21,7 @@
 
         <v-flex xs12>
           <v-layout row>
-            <v-flex xs-12>
+            <v-flex>
               <v-card-title primary-title>
                 <h3>Today</h3>
               </v-card-title>
