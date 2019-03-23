@@ -12,7 +12,7 @@ import "vuetify/dist/vuetify.min.css"; // Ensure you are using css-loader
 import GAuth from 'vue-google-oauth2';
 
 Vue.use(Vuetify);
-Vue.use(VueMoment)
+Vue.use(VueMoment);
 
 Vue.config.productionTip = false;
 
