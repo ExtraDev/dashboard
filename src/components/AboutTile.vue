@@ -1,8 +1,10 @@
 <template>
   <v-card>
     <v-card-title>
-      <h2>How to use</h2>
-      <p>Simply, click the "Plus" button on the right to add widgets (tiles) that you want.</p>
+      <div>
+        <h2>How to use</h2>
+        <div>Simply, click the "Plus" button on the right to add widgets (tiles) that you want.</div>
+      </div>
     </v-card-title>
   </v-card>
 </template>
